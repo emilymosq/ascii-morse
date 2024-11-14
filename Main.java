@@ -1,7 +1,10 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         HashMap<String, String> asciiMorse= new HashMap<>();
         asciiMorse.put("A", ".-");
         asciiMorse.put("B", "-...");
@@ -31,6 +34,18 @@ public class Main {
         asciiMorse.put("Z", "--..");
         asciiMorse.put("Ñ", ".----.");
 
+        System.out.println("Introduce una palabra");
+        String palabra = scanner.next();
+        System.out.println(asciiMorse.get(palabra));
 
+        String[] letras = new String[palabra.length()];
+
+        for(int i = 0; i < palabra.length(); i++){
+            letras[i] = String.valueOf(palabra.charAt(i));
+        }
+
+        for(String letra : letras){
+            System.out.println(letra);
+        }
     }
 }
